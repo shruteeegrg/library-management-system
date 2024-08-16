@@ -27,8 +27,7 @@ public class ReceiveBook extends HttpServlet {
 		
 		
 		if (result) {
-		    RequestDispatcher requestDispatcher = request.getRequestDispatcher("manageBooks.jsp?success=Successfully saved book");
-		    requestDispatcher.forward(request, response);
+			response.sendRedirect("manageBooks.jsp?success=Successfully saved book");
 		} else {
 		    response.sendRedirect("manageBooks.jsp?error=Invalid+credentials");
 		}

@@ -21,8 +21,7 @@ public class ReceiveBBook extends HttpServlet {
 		boolean result = new BBookManager().save(bookid, uid, borrowedDate, returnDate, status);
 
 		if (result) {
-		    RequestDispatcher requestDispatcher = request.getRequestDispatcher("issueBook.jsp?success=Successfully saved book");
-		    requestDispatcher.forward(request, response);
+			response.sendRedirect("issueBook.jsp?success=Successfully issued book to student");
 		} else {
 		    response.sendRedirect("issueBook.jsp?error=Invalid+credentials");
 		}
